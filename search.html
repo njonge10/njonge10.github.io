@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Admin Page</title>
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+       
+         <link href="assets/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+       
+        <script src="assets/js/jquery.min.js"></script>        
+       
+        <style type="text/css">
+<!--
+body{
+	background:url(apple_mobile.jpg) !important;
+	background-repeat:no-repeat;
+	}		
+.style3 {font-size: x-large}
+.style6 {color: #FF0000}
+.style7 {color: #00FF00}
+-->
+        </style>
+</head><body>
+
+    <!--  start-wrap -->
+    <div class="wrap">
+        <!--  start-header -->
+        <div class="header">
+    <!--  start-logo -->
+    <div class="col-md-4 logo">
+        <p><a href=""><img src="assets/images/logo2.png" alt="logo" width="213" height="122" /></a></p>
+</div>
+    <p>
+      <!--  end-logo -->
+<form action="find.php" method="POST" class="form" role="form">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h4 class="form-heading style3 style6">Add a phone to stock.</h4>
+      <tr>
+        <td><label>Phone Model</label></td>
+        <td><input type="text" name="name" id="name" class="form-control" required placeholder="Enter phone model"></td>
+      </tr>
+      <tr>
+        <td><label>Amount</label></td>
+        <td><p>
+          <input type="text" name="amount" id="amount" class="form-control" required placeholder="Enter amount">
+        </p>
+          <p>&nbsp; </p></td>
+      </tr>
+      <button type="submit" id="cancel" value="Submit" class="btn btn-lg btn-danger btn-block">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<style type="text/css">
+<!--
+.style2 {
+	font-size: xx-large;
+	color: #FF0000;
+}
+body{background-color: #F0F0F0;}
+-->
+</style>
+<body>
+<h1><img src="assets/images/logo2.png" alt="logo" width="213" height="122"></h1>
+ 
+</body>
+</html>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cellshop";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+// sql to delete a record
+$sql = "DELETE FROM payments WHERE id=3 ";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+
+$conn->close();
+?>
+<br/>
+<br/>
+<br/>
+
+<a class="btn btn-success" href="trial.html">Go to Admin Page</a>

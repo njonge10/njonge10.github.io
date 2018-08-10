@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pay Form</title>
+	
+	<?php
+	if(isset($_SESSION["result_data"]) && count($_SESSION["result_data"]) > 0) {
+
+		for($i = 0; $i<count($_SESSION["result_data"]); $i++) {
+	extract($_SESSION["result_data"][$i]);
+	
+	if ($i%2) {
+		$class = 'row1';
+	} else {
+		$class = 'row2';
+	}
+	}
+}
+$phone=$_GET["phone"];
+
+
+echo $phone;
+die; 
+	?>
+	
+    <style type="text/css">
+<!--
+.style1 {color: #00FF00}
+-->
+    </style>
+</head>
+<body >
+	<p>&nbsp;</p>
+	<p><img src="assets/logo2.png" width="213" height="122" alt="logo"></p>
+	<h1 class="style1">Pay with Mpesa</h1>
+	<form method="post" action="paycon.php">
+		<table>
+
+		<tr>
+				<td><label>Name</label></td>
+				<td>:</td>
+				<td>
+					<input type="textbox" id="name" name="name" value="<?php echo $phone; ?>">
+				</td>
+		  </tr>
+			<tr>
+				<td><label>Phone</label></td>
+				<td>:</td>
+				<td>
+					<input type="textbox" id="phone" name="phone" readonly >
+				</td>
+			</tr>
+			<tr>
+				<td>Price Ksh</td>
+				<td>:</td>
+				<td><input type="text" id="cost" name="cost" readonly></td>
+			</tr>
+			<tr>
+				<td>Paybill</td>
+				<td>:</td>
+				<td><input type="text" id="paybill" name="paybill" placeholder="999111" readonly></td>
+			</tr>
+			<tr>
+				<td>Amount Paid</td>
+				<td>:</td>
+				<td><input type="number" max="60000" id="amount" name="amount" placeholder="Enter Amount Paid" required></td>
+			</tr>
+		</table>
+		<input type="submit" value="Buy" name="submit">
+	</form>
+
+</body>
+</html>

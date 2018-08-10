@@ -1,0 +1,179 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Database Information</title>
+        <style type="text/css">
+<!--
+.style1 {
+	font-size: xx-large;
+	color: #FF0000;
+}
+-->
+        </style>
+</head>
+    <body>
+
+        <?php
+        $con=  mysqli_connect("localhost", "root", "", "cellshop");
+
+        if(!$con)
+       {
+           die('not connected');
+       }
+            $con=  mysqli_query($con, "select * from payments");
+
+       ?>
+        <div>
+            <td><span class="style1">Purchased Phones</span></td>
+         <table border="1">
+            <th width="113"> Name</th>
+                    <th width="140">Phone Model</th>
+                    <th width="100">Amount Paid</th>
+                    
+
+            </tr>
+
+        <?php
+
+             while($row=  mysqli_fetch_array($con))
+             {
+                 ?>
+            <tr>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['phone']; ?></td>
+                <td><?php echo $row['amount']; ?></td>
+               
+            </tr>
+        <?php
+             }
+             ?>
+          </table>
+    </div>
+    </body>
+</html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Database Information</title>
+        <style type="text/css">
+<!--
+.style1 {
+	font-size: xx-large;
+	color: #FF0000;
+}
+-->
+        </style>
+</head>
+    <body>
+
+        <?php
+        $con=  mysqli_connect("localhost", "root", "", "cellshop");
+
+        if(!$con)
+       {
+           die('not connected');
+       }
+            $con=  mysqli_query($con, "select * from login");
+
+       ?>
+        <div>
+            <td><span class="style1">Registered Customers</span></td>
+         <table border="1">
+            <th width="113"> Name</th>
+                    <th width="140">Email</th>
+                    <th width="100">Contact</th>
+                    
+
+            </tr>
+
+        <?php
+
+             while($row=  mysqli_fetch_array($con))
+             {
+                 ?>
+            <tr>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['contact']; ?></td>
+               
+            </tr>
+        <?php
+             }
+             ?>
+          </table>
+    </div>
+	
+    </body>
+</html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Database Information</title>
+        <style type="text/css">
+<!--
+.style1 {
+	font-size: xx-large;
+	color: #FF0000;
+}
+-->
+        </style>
+</head>
+    <body>
+
+        <?php
+        $con=  mysqli_connect("localhost", "root", "", "cellshop");
+
+        if(!$con)
+       {
+           die('not connected');
+       }
+            $con=  mysqli_query($con, "select * from admin");
+
+       ?>
+        <div>
+            <td><span class="style1">Customer Feedback</span></td>
+         <table border="1">
+            <th width="113"> Name</th>
+                    <th width="140">Email</th>
+                    <th width="100">Comments</th>
+                    
+
+            </tr>
+
+        <?php
+
+             while($row=  mysqli_fetch_array($con))
+             {
+                 ?>
+            <tr>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['comment']; ?></td>
+               
+            </tr>
+        <?php
+             }
+             ?>
+          </table>
+    </div>
+	 <form action="cancel.php" method="POST" class="form" role="form">
+      <h4 class="form-heading style3 style6">Which customer do you want to cancel?</h4>
+      <tr>
+        <td><label>Customer Name</label></td>
+        <td><input type="text" name="name" id="name" class="form-control" required placeholder="Enter customer Name"></td>
+      </tr>
+      <tr>
+        <td><label>Amount</label></td>
+        <td><input type="text" name="amount" id="amount" class="form-control" required placeholder="Enter amount"></td>
+      </tr>
+      <button type="submit" id="cancel" value="Submit" class="btn btn-lg btn-danger btn-block">Delete</button>
+    </form>
+	<p>
+              <label>
+              <input type="submit" name="Submit2" onClick="location.href='index.html';" value="Logout">
+              </label>
+</p>
+</div>
+</div>
+    </body>
+</html>

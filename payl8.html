@@ -1,0 +1,70 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['asset_user_name'])){
+ // Closing Connection
+header('Location: login.html'); // Redirecting To Home Page
+}
+else{
+	$username=$_SESSION['asset_user_name'];
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pay Form</title>
+	<script type="text/javascript">
+			function  cost(){
+				document.getElementById('phone').value = "Tecno L8";
+				document.getElementById('cost').value = "15000";
+				document.getElementById('paybill').value = "999111"
+			}
+	</script>
+	
+    <style type="text/css">
+<!--
+.style1 {color: #00FF00}
+-->
+    </style>
+</head>
+<body onLoad="cost()">
+	
+	<p>&nbsp;</p>
+	<p><img src="assets/logo2.png" width="213" height="122" alt="logo"></p>
+	<h1 class="style1 style1">Pay with Mpesa</h1>
+	<form method="post" action="paycon.html">
+		<table>
+		<tr>
+				<td><label>Name</label></td>
+				<td>:</td>
+				<td>
+					<input type="textbox" id="name" name="name" value="<?php echo $username; ?>">
+				</td>
+		  </tr>
+			<tr>
+				<td><label>Phone</label></td>
+				<td>:</td>
+				<td>
+					<input type="textbox" id="phone" name="phone" readonly >
+				</td>
+			</tr>
+			<tr>
+				<td>Price Ksh</td>
+				<td>:</td>
+				<td><input type="text" id="cost" name="cost" readonly></td>
+			</tr>
+			<tr>
+				<td>Paybill</td>
+				<td>:</td>
+				<td><input type="text" id="paybill" name="paybill" placeholder="999111" readonly></td>
+			</tr>
+			<tr>
+				<td>Amount Paid</td>
+				<td>:</td>
+				<td><input type="number" max="15000" id="amount" name="amount" placeholder="Enter Amount Paid" required></td>
+			</tr>
+		</table>
+		<input type="submit" value="Buy" name="submit">
+	</form>
+
+</body>
+</html>

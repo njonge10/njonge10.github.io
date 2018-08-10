@@ -1,0 +1,310 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+	<script type="text/javascript">
+			function  logout(){
+				if (isset($_SESSION['asset_user_name'])) {
+				unset($_SESSION['asset_user_name']);
+				
+				session_unregister('$_SESSION['asset_user_name']');
+				
+		
+	}
+			}
+	</script>
+        		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Welcome to Cellphone Shop</title>
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+       
+         <link href="assets/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+       
+        <script src="assets/js/jquery.min.js"></script> 
+		 <style type="text/css">
+<!--
+.style1 {
+	color: #000000;
+	font-size: large;
+}
+.style2 {font-size: large}
+body{
+	background:url(apple_mobile.jpg) !important;
+	background-repeat:no-repeat;
+	}		
+#container,.sidebar{
+	background-color:rgba(245, 245, 245, 0.86) !important;}
+-->
+        </style>       
+       
+    </head><body onLoad="logout()">
+    <!--  start-wrap -->
+    <div class="wrap">
+        <!--  start-header -->
+        <div class="header">
+    <!--  start-logo -->
+    <div class="col-md-4 logo">
+        <a href=""><img src="assets/images/logo2.png" title="logo"/></a>
+    </div>
+    <!--  end-logo -->
+
+    <div class="col-md-8 info">
+        <p style="margin-top: 5em"><a href="login.html" class="btn btn-primary">signup</a></p>
+		<p style="margin-top: 5em"><a href="userlogin.html" class="btn btn-primary">login</a></p>
+    </div>
+    <div class="clear"> </div>
+    <!--start of menu-->
+    <div class="menu-main">
+    <div class="menu">
+        <ul>
+            <li class=""><a href="home.html">Home</a></li>
+            <li class=""><a href="about.html">About</a></li>
+<!--            <li><a href="">Category</a>
+                <ul>
+                    <li><a href="">Tecno</a></li>
+                    <li><a href="">Samsung</a></li>
+                    <li><a href="">Huawei</a></li>
+                    <li><a href="">Infinix</a></li>
+                    <div class="clear"> </div>
+                </ul>
+            </li>-->
+            <li><a href="buy.html">Purchase</a></li>
+            <li class=""><a href="contacts.html">Contact</a></li>
+            <li><a href="Phones.html">Phones</a></li>
+
+            <div class="clear"> </div>
+        </ul>
+        <div class="clear"> </div>
+    </div>
+</div>    <!--end of menu-->
+</div>        <!--  end-header -->
+        <!--  Img-Slider -->
+        <div class="clear"> </div>
+        <div class="slider">
+            <!--start of slider-->
+            <div class="blueberry">
+    <ul class="slides">
+        <li><img src="assets/images/phone1.png" title="slider1"/ ></li>
+        <li><img src="assets/images/phone6.jpg" title="slider2"/ ></li>
+        <li><img src="assets/images/phone4.png" title="slider4"/ ></li>
+        <li><img src="assets/images/phone3.png" title="slider2"/ ></li>
+        <div class="clear"> </div>
+    </ul>
+</div>            <!--end of slider-->
+            <div class="clear"> </div>
+            <!--  End-of image slider -->
+        </div>
+        <div class="content">
+            <!--start sidebar-->
+            <div class="col-lg-3">
+                <div class="search">
+    <!--start of search-->
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src=""></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.blueberry.js"></script>
+        <script src="assets/js/home.js"></script>
+        <script>
+            $(window).load(function() {
+                $('.blueberry').blueberry();
+            });
+        </script>
+    </head>
+<h1 style="font-family: Blackadder ITC;font-size: 16pt;color: red;">Find your Cellphone</h1>
+<div style="padding-right: 3px">
+    <form class="" role="search" action="cell.html" method="post">
+        <div class="form-group">
+            <input type="text" name="search1" id="search1" class="form-control" placeholder="Search" >
+          <button type="submit"  class="btn btn-default"><span class="glyphicon glyphicon-search" ></span></button>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+    <div class="clearfix"></div>
+</div>
+<!--<div class="input-group">
+    <form action="mine/json" method="post" >
+        search   <input type="text" name="search" id="search" class="" style=""/>
+
+    </form>    
+</div>-->
+
+<!--<ul id="finalResult"></ul>-->
+<script>
+    var base_url = "";
+</script>
+<script>
+    $(document).ready(function() {
+        $("#search").keyup(function() {
+            if ($("#search").val().length > 1) {
+                $.ajax({
+                    type: "post",
+                    url: base_url + "search/results",
+                    cache: false,
+                    data: 'search=' + $("#search").val(),
+                    success: function(responseText) {
+                        $('#finalResult').html("");
+                        var obj = responseText;
+                        if (obj.length > 0) {
+                            $('#finalResult').html(responseText);
+                        } else {
+                            $('#finalResult').html($('<li/>').text("No Data Found"));
+                        }
+
+                    },
+                    error: function() {
+                        $('#finalResult').html($('<li/>').text("Error"));
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>
+
+    <!--end of search-->
+</div>
+<div class="clear"> </div>
+<div class="hr">
+</div>
+<div class="fa-facebook-square">
+    <div class="title">
+        <p style="font-family: Blackadder ITC;font-size: 16pt;color: red;">Customer services</p>
+    </div><br/>
+    <div class="call_center">
+        <p>Call (+254)713 887 446</p>
+    </div>
+</div>
+<div class="hr">
+</div>
+
+<div class="fb-like-box">
+    <!--start of fbpage-->
+    <section id="ccr-find-on-fb">
+    <div class="grid_1_of_3 images_1_of_3 top_grid1">
+        <div class="find-fb-title">
+            <span><i class="fa fa-facebook"></i></span> Find us on Facebook
+        </div> <!-- /.find-fb-title -->
+        <div class="find-on-fb-body">  
+            <div class="fb-like-box" data-href="#" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div> 
+        </div> <!-- /.find-on-fb-body -->
+    </div>
+</section>
+    <!--end of fbpage-->
+</div>
+<div class="clear"> </div>
+<div class="hr"></div>
+<div class="fb-like-box">
+    <!--start of twitter-->
+    <section id="ccr-find-on-fb">
+    <div class="grid_1_of_3 images_1_of_3 top_grid1">
+        <div class="find-twiter-title">
+            <span><i class="fa fa-twitter"></i></span> Follow us on Twitter
+        </div> <!-- /.find-fb-title -->
+        <div class="find-on-fb-body">  
+            <p><a href="#" class="twitter-follow-button" data-show-count="true">Follow @Cellphone</a>
+                <script>!function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');</script>
+            </p>
+            <p>
+              <label>
+              <input type="submit" name="Submit2" onClick="location.href='java.html';" value="Administrator">
+              </label>
+</p>
+        </div> <!-- /.find-on-fb-body -->
+    </div>
+</section>    <!--end of twiter-->
+</div>
+            </div>
+            <!--end of sidebar-->
+            <!--start of page content-->
+            <div class="main">
+                <div class="col-md-9" id="finalResult">
+
+                    <!----------------load subview for every page------------>
+                     <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About our store</title>
+<style type="text/css">
+
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	-webkit-box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>Online Cellphone Shop</h1>
+		<p>Welcome to this online cellphone shop where you will find all the cellphone brands and models of your choice.<br>
+		Kindly browse through our stock of cellphones and make your order.This cellphone selling point is convenient and reliable.</p><p>We are glad for shopping with us.</p><p>Thank you.</p>
+		<p>&nbsp;</p>
+		<p>Kindly give us your feedback by clicking on the button below </p>
+		<p>
+		  <label>
+		  <input name="Submit" type="submit" onClick="location.href='feedback.html';" value="Feedback" />
+		  </label>
+</p>
+	</div>
+    <p>&nbsp;</p>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Payment Confirmation</title>
+<script type="text/javascript">
+	function successful(){
+		alert("Your payment has been processed...Purchase successful!!!");
+	}
+</script>
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+<style type="text/css">
+body{
+    background:url(apple_mobile.jpg);
+	background-repeat:no-repeat;
+	}
+</style>
+</head>
+<div class="wrap">
+<style>
+body {background-color:#OOFFFF;
+}
+</style>
+<body onload="successful()">
+<div class="row">
+  <p><img src="assets/images/logo2.png" alt="logo" width="213" height="122" />  </p>
+  <p>&nbsp;</p>
+  <div class="col-md-7 col-md-offset-2" style="margin-top:50px;margin-bottom:200px; line-height:30px;">
+	<h2>
+		Thank you for purchasing from us...We welcome any feedback you may have by clicking on the link on our home page.	</h2>
+	<p>&nbsp;</p>
+	 <tr>
+                <td><?php echo $name['name']; ?></td>
+				</tr>
+
+	<a class="btn btn-success" href="cellphone.html">Go to home</a>
+</div>
+</div>
+</body>
+</div>
+</html>
+
+<?php echo  
